@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 
 namespace Bif3.Swe1.Oop.Polymorphism.InferfaceBasedShapes {
-    class CompoundShape : IShapeComposition {
+    class BetterCompoundShape : IBetterShapeComposition {
         public int XOriginCoordinate { get; }
         public int YOriginCoordinate { get; }
 
-        private List<IShapeComposition> shapeList = new List<IShapeComposition>();
+        private List<IBetterShapeComposition> _shapeList = new List<IBetterShapeComposition>();
 
-        public CompoundShape(int x, int y) {
+        public BetterCompoundShape(int x, int y) {
             this.XOriginCoordinate = x;
             this.YOriginCoordinate = y;
         }
 
-        public void Add(IShapeComposition shape) {
-            shapeList.Add(shape);
+        public void Add(IBetterShapeComposition shape) {
+            _shapeList.Add(shape);
         }
 
         public double GetArea() {
             double tempArea = 0;
-            foreach (IShapeComposition shape in shapeList) {
+            foreach (IBetterShapeComposition shape in _shapeList) {
                 tempArea += shape.GetArea();
             }
             Console.WriteLine($"Sum of all perimeters: {tempArea}");
@@ -29,7 +29,7 @@ namespace Bif3.Swe1.Oop.Polymorphism.InferfaceBasedShapes {
 
         public double GetPerimeter() {
             double tempPerimeter = 0;
-            foreach (IShapeComposition shape in shapeList) {
+            foreach (IBetterShapeComposition shape in _shapeList) {
                 tempPerimeter += shape.GetPerimeter();
             }
             Console.WriteLine($"Sum of all perimeters: {tempPerimeter}");
@@ -39,7 +39,7 @@ namespace Bif3.Swe1.Oop.Polymorphism.InferfaceBasedShapes {
 
         public void PrintShapeType() {
             Console.WriteLine("I'm a CompoundShape");
-            foreach (IShape shape in shapeList) {
+            foreach (IBetterShape shape in _shapeList) {
                 shape.PrintShapeType();
             }
         }

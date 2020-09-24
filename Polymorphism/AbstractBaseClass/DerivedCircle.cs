@@ -9,8 +9,12 @@ namespace Bif3.Swe1.Oop.Polymorphism.AbstractBaseClass {
             _radius = radius;
         }
 
-        public double GetArea() {
+        public override double GetArea() {
             return _radius * 14;
+        }
+
+        public override double GetPerimeter() {
+            return 20;
         }
 
         public override void PrintShapeType() {

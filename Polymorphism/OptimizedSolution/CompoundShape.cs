@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace Bif3.Swe1.Oop.Polymorphism.AbstractBaseClass {
-    class DerivedCompoundShape : AbstractShape {
+namespace Bif3.Swe1.Oop.Polymorphism.OptimizedSolution {
+    class CompoundShape : Shape, IShapeComposition {
 
-        private List<AbstractShape> _shapeList = new List<AbstractShape>();
+        private List<IShapeComposition> _shapeList = new List<IShapeComposition>();
 
-        public DerivedCompoundShape(int x, int y) : base(x, y) { }
+        public CompoundShape(int x, int y) : base(x, y) {}
 
-        public void Add(AbstractShape shape) {
+        public void Add(IShapeComposition shape) {
             _shapeList.Add(shape);
         }
 
-        public override double GetArea() {
+        public double GetArea() {
             double tempArea = 0;
-            foreach (AbstractShape shape in _shapeList) {
+            foreach (IShapeComposition shape in _shapeList) {
                 tempArea += shape.GetArea();
             }
             Console.WriteLine($"Sum of all perimeters: {tempArea}");
@@ -22,9 +23,9 @@ namespace Bif3.Swe1.Oop.Polymorphism.AbstractBaseClass {
             return tempArea;
         }
 
-        public override double GetPerimeter() {
+        public double GetPerimeter() {
             double tempPerimeter = 0;
-            foreach (AbstractShape shape in _shapeList) {
+            foreach (IShapeComposition shape in _shapeList) {
                 tempPerimeter += shape.GetPerimeter();
             }
             Console.WriteLine($"Sum of all perimeters: {tempPerimeter}");
@@ -32,9 +33,9 @@ namespace Bif3.Swe1.Oop.Polymorphism.AbstractBaseClass {
             return tempPerimeter;
         }
 
-        public override void PrintShapeType() {
+        public void PrintShapeType() {
             Console.WriteLine("I'm a CompoundShape");
-            foreach (AbstractShape shape in _shapeList) {
+            foreach (IShapeComposition shape in _shapeList) {
                 shape.PrintShapeType();
             }
         }

@@ -1,5 +1,5 @@
 ﻿namespace Bif3.Swe1.Oop.Polymorphism.InferfaceBasedShapes {
-    interface IShape {
+    interface IBetterShape {
         int XOriginCoordinate { get; }
         int YOriginCoordinate { get; }
         void PrintShapeType();

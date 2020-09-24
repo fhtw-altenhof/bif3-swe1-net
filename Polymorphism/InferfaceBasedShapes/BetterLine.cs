@@ -1,13 +1,13 @@
 ﻿using System;
 
 namespace Bif3.Swe1.Oop.Polymorphism.InferfaceBasedShapes {
-    class Line : IShapeComposition {
+    class BetterLine : IBetterShapeComposition {
         public int XOriginCoordinate { get; }
         public int YOriginCoordinate { get; }
 
         private int _xEndCoordinate, _yEndCoordinate;
 
-        public Line(int x1, int y1, int x2, int y2) {
+        public BetterLine(int x1, int y1, int x2, int y2) {
             this.XOriginCoordinate = x1;
             this.YOriginCoordinate = y1;
             this._xEndCoordinate = x2;
@@ -28,7 +28,7 @@ namespace Bif3.Swe1.Oop.Polymorphism.InferfaceBasedShapes {
         }
 
         public void ShowOrigin() {
-            Console.WriteLine($"Origin at X: {XOriginCoordinate} Y: {YOriginCoordinate}");
+            Console.WriteLine($"Origin at X: {this.XOriginCoordinate} Y: {this.YOriginCoordinate}");
         }
     }
 }

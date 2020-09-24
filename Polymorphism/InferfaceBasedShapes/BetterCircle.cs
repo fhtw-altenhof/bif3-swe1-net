@@ -1,13 +1,13 @@
 ﻿using System;
 
 namespace Bif3.Swe1.Oop.Polymorphism.InferfaceBasedShapes {
-    class Circle : IShapeComposition {
+    class BetterCircle : IBetterShapeComposition {
         public int XOriginCoordinate { get; }
         public int YOriginCoordinate { get; }
 
         private int _radius;
 
-        public Circle(int x, int y, int radius) {
+        public BetterCircle(int x, int y, int radius) {
             this.XOriginCoordinate = x;
             this.YOriginCoordinate = y;
             _radius = radius;

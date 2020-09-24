@@ -2,6 +2,7 @@
 using Bif3.Swe1.Oop.Inheritance;
 using Bif3.Swe1.Oop.Polymorphism.AbstractBaseClass;
 using Bif3.Swe1.Oop.Polymorphism.InferfaceBasedShapes;
+using Bif3.Swe1.Oop.Polymorphism.OptimizedSolution;
 using System;
 
 namespace Bif3.Swe1.Oop {
@@ -56,17 +57,20 @@ namespace Bif3.Swe1.Oop {
             Console.WriteLine("-----");
 
             // Polymorphism with abstract base class
-            AbstractShape line = new DerivedLine(0, 1, 1, 1);
-            line.ShowOrigin();
-            AbstractShape circle = new DerivedCircle(5, 5, 3);
-            circle.ShowOrigin();
+            AbstractShape abstractLine = new DerivedLine(0, 1, 1, 1);
+            abstractLine.ShowOrigin();
+            double abstractLinePerimeter = abstractLine.GetPerimeter();
 
-            DerivedCompoundShape compound = new DerivedCompoundShape(7, 7);
-            compound.Add(line);
-            compound.Add(circle);
-            compound.Add(new DerivedLine(3, 4, 5, 6));
-            compound.ShowOrigin();
-            compound.PrintAllShapes();
+            AbstractShape abstractCircle = new DerivedCircle(5, 5, 3);
+            abstractCircle.ShowOrigin();
+            double abstractCircleArea = abstractCircle.GetArea();
+
+            DerivedCompoundShape derivedCompound = new DerivedCompoundShape(7, 7);
+            derivedCompound.Add(abstractLine);
+            derivedCompound.Add(abstractCircle);
+            derivedCompound.Add(new DerivedLine(3, 4, 5, 6));
+            derivedCompound.ShowOrigin();
+            derivedCompound.PrintShapeType();
 
             // casting works in IDE, but will throw an error at runtime if "line" is smth else than a Line obje
             //AbstractShape shape = new DerivedCircle(0, 0, 1);
@@ -75,20 +79,38 @@ namespace Bif3.Swe1.Oop {
             Console.WriteLine("-----");
 
             // Polymorphism with interfaces
-            IShapeComposition betterLine = new Line(0, 1, 1, 1);
+            IBetterShapeComposition betterLine = new BetterLine(0, 1, 1, 1);
             betterLine.ShowOrigin();
-            double linePerimeter = betterLine.GetPerimeter();
+            double betterLinePerimeter = betterLine.GetPerimeter();
 
-            IShapeComposition betterCircle = new Circle(5, 5, 3);
+            IBetterShapeComposition betterCircle = new BetterCircle(5, 5, 3);
+            double betterCircleArea = betterCircle.GetArea();
+            betterCircle.ShowOrigin();
+
+            BetterCompoundShape betterCompound = new BetterCompoundShape(7, 7);
+            betterCompound.Add(betterLine);
+            betterCompound.Add(betterCircle);
+            betterCompound.Add(new BetterLine(3, 4, 5, 6));
+            betterCompound.ShowOrigin();
+            betterCompound.PrintShapeType();
+
+            Console.WriteLine("-----");
+
+            // Very good solution for this usecase - Polymorphism with interfaces and a base class
+            Line line = new Line(0, 1, 1, 1);
+            line.ShowOrigin();
+            double linePerimeter = line.GetPerimeter();
+
+            Circle circle = new Circle(5, 5, 3);
             double circleArea = betterCircle.GetArea();
             betterCircle.ShowOrigin();
 
-            CompoundShape betterCompound = new CompoundShape(7, 7);
-            betterCompound.Add(betterLine);
-            betterCompound.Add(betterCircle);
-            betterCompound.Add(new Line(3, 4, 5, 6));
-            betterCompound.ShowOrigin();
-            betterCompound.PrintShapeType();
+            CompoundShape compoundShape = new CompoundShape(7, 7);
+            compoundShape.Add(line);
+            compoundShape.Add(circle);
+            compoundShape.Add(new Line(3, 4, 5, 6));
+            compoundShape.ShowOrigin();
+            compoundShape.PrintShapeType();
         }
     }
 }
