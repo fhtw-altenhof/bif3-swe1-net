@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Bif3.Swe1.Oop.Polymorphism.OptimizedSolution {
     class CompoundShape : Shape, IShapeComposition {
