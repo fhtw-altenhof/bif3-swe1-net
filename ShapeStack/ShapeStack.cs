@@ -34,7 +34,7 @@ namespace Bif3.Swe1.Oop.ShapeStackGit {
         }
 
         public bool IsEmpty() {
-            return _top == 0;
+            return _top <= 0;
         }
 
         public void DescribeStack() {
