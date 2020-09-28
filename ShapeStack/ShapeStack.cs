@@ -27,7 +27,9 @@ namespace Bif3.Swe1.Oop.ShapeStack {
         }
 
         public void DescribeStack() {
-            throw new NotImplementedException();
+            foreach (IShapeComposition shape in _shapeList) {
+                shape.PrintShapeType();
+            }
         }
     }
 }
