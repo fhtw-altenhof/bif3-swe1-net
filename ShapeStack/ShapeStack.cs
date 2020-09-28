@@ -28,8 +28,8 @@ namespace Bif3.Swe1.Oop.ShapeStackGit {
                 Console.WriteLine("STACK UNDERFLOW!");
                 return null;
             }
-            IShapeComposition tempShape = _shapeList[_top];
             _top--;
+            IShapeComposition tempShape = _shapeList[_top];
             return tempShape;
         }
 

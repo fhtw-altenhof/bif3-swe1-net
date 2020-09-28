@@ -113,8 +113,17 @@ namespace Bif3.Swe1.Oop {
             compoundShape.ShowOrigin();
             compoundShape.PrintShapeType();
 
+            Console.WriteLine("-----");
+
             IShapeStack shapeStack = new ShapeStack(5);
             shapeStack.Push(line);
+            Console.WriteLine($"Is empty? {shapeStack.IsEmpty()}");
+
+            if (!shapeStack.IsEmpty()) {
+                shapeStack.DescribeStack();
+            }
+
+            shapeStack.Pop();
             Console.WriteLine($"Is empty? {shapeStack.IsEmpty()}");
         }
     }
