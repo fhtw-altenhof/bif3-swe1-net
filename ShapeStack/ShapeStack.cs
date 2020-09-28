@@ -15,7 +15,12 @@ namespace Bif3.Swe1.Oop.ShapeStack {
         }
 
         public void Push(IShapeComposition shapeObj) {
-            throw new NotImplementedException();
+            if (_top >= _maxSize) {
+                Console.WriteLine("STACK OVERFLOW!");
+                return;
+            }
+            _top++;
+            _shapeList.Add(shapeObj);
         }
 
         public IShapeComposition Pop() {
