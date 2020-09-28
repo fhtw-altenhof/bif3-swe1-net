@@ -29,7 +29,7 @@ namespace Bif3.Swe1.Oop.ShapeStack {
         }
 
         public bool IsEmpty() {
-            throw new NotImplementedException();
+            return _top == 0;
         }
 
         public void DescribeStack() {
