@@ -18,7 +18,7 @@ namespace Bif3.Swe1.Oop.ShapeStack {
             throw new NotImplementedException();
         }
 
-        public Shape Pop() {
+        public IShapeComposition Pop() {
             throw new NotImplementedException();
         }
 
