@@ -19,7 +19,13 @@ namespace Bif3.Swe1.Oop.ShapeStack {
         }
 
         public IShapeComposition Pop() {
-            throw new NotImplementedException();
+            if (IsEmpty()) {
+                Console.WriteLine("STACK UNDERFLOW!");
+                return null;
+            }
+            IShapeComposition tempShape = _shapeList[_top];
+            _top--;
+            return tempShape;
         }
 
         public bool IsEmpty() {
