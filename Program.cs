@@ -125,6 +125,8 @@ namespace Bif3.Swe1.Oop {
 
             shapeStack.Pop();
             Console.WriteLine($"Is empty? {shapeStack.IsEmpty()}");
+
+            Console.WriteLine("-----");
         }
     }
 }
