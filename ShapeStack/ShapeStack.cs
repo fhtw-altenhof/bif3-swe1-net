@@ -2,8 +2,8 @@
 using System;
 using System.Collections.Generic;
 
-namespace Bif3.Swe1.Oop.ShapeStack {
-    class ShapeStack {
+namespace Bif3.Swe1.Oop.ShapeStackGit {
+    class ShapeStack : IShapeStack {
 
         private List<IShapeComposition> _shapeList = new List<IShapeComposition>();
         private int _top = 0;
@@ -15,7 +15,12 @@ namespace Bif3.Swe1.Oop.ShapeStack {
         }
 
         public void Push(IShapeComposition shapeObj) {
-            throw new NotImplementedException();
+            if (_top >= _maxSize) {
+                Console.WriteLine("STACK OVERFLOW!");
+                return;
+            }
+            _top++;
+            _shapeList.Add(shapeObj);
         }
 
         public IShapeComposition Pop() {

@@ -3,6 +3,7 @@ using Bif3.Swe1.Oop.Inheritance;
 using Bif3.Swe1.Oop.Polymorphism.AbstractBaseClass;
 using Bif3.Swe1.Oop.Polymorphism.InferfaceBasedShapes;
 using Bif3.Swe1.Oop.Polymorphism.OptimizedSolution;
+using Bif3.Swe1.Oop.ShapeStackGit;
 using System;
 
 namespace Bif3.Swe1.Oop {
@@ -111,6 +112,10 @@ namespace Bif3.Swe1.Oop {
             compoundShape.Add(new Line(3, 4, 5, 6));
             compoundShape.ShowOrigin();
             compoundShape.PrintShapeType();
+
+            IShapeStack shapeStack = new ShapeStack(5);
+            shapeStack.Push(line);
+            Console.WriteLine($"Is empty? {shapeStack.IsEmpty()}");
         }
     }
 }
