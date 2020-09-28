@@ -2,8 +2,8 @@
 using System;
 using System.Collections.Generic;
 
-namespace Bif3.Swe1.Oop.ShapeStack {
-    class ShapeStack {
+namespace Bif3.Swe1.Oop.ShapeStackGit {
+    class ShapeStack : IShapeStack {
 
         private List<IShapeComposition> _shapeList = new List<IShapeComposition>();
         private int _top = 0;
@@ -28,7 +28,7 @@ namespace Bif3.Swe1.Oop.ShapeStack {
         }
 
         public bool IsEmpty() {
-            throw new NotImplementedException();
+            return _shapeList.Count == 0;
         }
 
         public void DescribeStack() {
