@@ -123,13 +123,13 @@ namespace Bif3.Swe1.Oop {
                 shapeStack.DescribeStack();
             }
 
-            shapeStack.Pop();
-            Console.WriteLine($"Is empty? {shapeStack.IsEmpty()}");
+            Console.WriteLine("-----");
 
-            Console.WriteLine("-----");
-            Console.WriteLine("-----");
-            Console.WriteLine("-----");
-            Console.WriteLine("-----");
+            IShapeComposition poppedShape = shapeStack.Pop();
+            Console.WriteLine("Following shape was popped from stack:");
+            poppedShape.PrintShapeType();
+            Console.WriteLine($"Is stack empty? {shapeStack.IsEmpty()}");
+
             Console.WriteLine("-----");
         }
     }

@@ -30,6 +30,7 @@ namespace Bif3.Swe1.Oop.ShapeStackGit {
             }
             _top--;
             IShapeComposition tempShape = _shapeList[_top];
+            _shapeList.RemoveAt(_top);
             return tempShape;
         }
 
