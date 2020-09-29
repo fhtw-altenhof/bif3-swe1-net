@@ -15,6 +15,8 @@ namespace Bif3.Swe1.Oop.Inheritance {
         // different types of string interpolation
         public void Method2(string parameterString) {
             Console.WriteLine("Method2 Param DerivedClass" + parameterString);
+            Console.WriteLine(string.Format("Method2 Param DerivedClass {0}", parameterString));
+            Console.WriteLine($"Method2 Param DerivedClass {parameterString}");
         }
     }
 }
