@@ -11,14 +11,13 @@ namespace Bif3.Swe1.Oop.Polymorphism.OptimizedSolution {
         }
 
         public double GetArea() {
-            return 15;
+            // lines do not have areas they cover
+            return 0;
         }
 
         public double GetPerimeter() {
-            // basically no perimeter for lines, but (obviously wrong) line length will be calculated
-            return this._x + this._y + this._x2 + this._y2;
-            // right length calculation woud be
-            //return Math.Sqrt(Math.Pow((this._x2 - this._x), 2) + Math.Pow((this._y2 - this._y), 2));
+            // basically no perimeter for lines, but line length will be calculated
+            return Math.Sqrt(Math.Pow((this._x2 - this._x), 2) + Math.Pow((this._y2 - this._y), 2));
         }
 
         public void PrintShapeType() {

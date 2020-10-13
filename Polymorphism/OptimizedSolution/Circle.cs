@@ -10,7 +10,7 @@ namespace Bif3.Swe1.Oop.Polymorphism.OptimizedSolution {
         }
 
         public double GetArea() {
-            return 20;
+            return Math.Pow(this._radius, 2) * Math.PI;
         }
 
         public double GetPerimeter() {
