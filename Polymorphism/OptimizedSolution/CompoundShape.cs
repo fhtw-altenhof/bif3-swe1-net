@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 namespace Bif3.Swe1.Oop.Polymorphism.OptimizedSolution {
-    class CompoundShape : Shape, IShapeComposition {
+    public class CompoundShape : Shape, IShapeComposition {
 
         private List<IShapeComposition> _shapeList = new List<IShapeComposition>();
 

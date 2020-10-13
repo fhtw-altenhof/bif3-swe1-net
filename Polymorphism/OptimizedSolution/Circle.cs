@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Bif3.Swe1.Oop.Polymorphism.OptimizedSolution {
-    class Circle : Shape, IShapeComposition {
+    public class Circle : Shape, IShapeComposition {
 
         private int _radius;
 

@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Bif3.Swe1.Oop.Polymorphism.OptimizedSolution {
-    abstract class Shape {
+    public abstract class Shape {
 
         protected int _x, _y;
 

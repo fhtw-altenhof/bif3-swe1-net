@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Bif3.Swe1.Oop.Polymorphism.OptimizedSolution {
-    class Line : Shape, IShapeComposition {
+    public class Line : Shape, IShapeComposition {
 
         private int _x2, _y2;
 
