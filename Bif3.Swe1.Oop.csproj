@@ -5,4 +5,16 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Bif3.Swe1.ClientSocket\**" />
+    <Compile Remove="Bif3.Swe1.ServerSocket\**" />
+    <Compile Remove="Bif3.Swe1.UnitTest\**" />
+    <EmbeddedResource Remove="Bif3.Swe1.ClientSocket\**" />
+    <EmbeddedResource Remove="Bif3.Swe1.ServerSocket\**" />
+    <EmbeddedResource Remove="Bif3.Swe1.UnitTest\**" />
+    <None Remove="Bif3.Swe1.ClientSocket\**" />
+    <None Remove="Bif3.Swe1.ServerSocket\**" />
+    <None Remove="Bif3.Swe1.UnitTest\**" />
+  </ItemGroup>
+
 </Project>

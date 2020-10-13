@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 
 namespace Bif3.Swe1.Oop.Polymorphism.OptimizedSolution {
-    class CompoundShape : Shape, IShapeComposition {
+    public class CompoundShape : Shape, IShapeComposition {
 
         private List<IShapeComposition> _shapeList = new List<IShapeComposition>();
 
         public CompoundShape(int x, int y) : base(x, y) {}
+
+        public double Count => _shapeList.Count;
 
         public void Add(IShapeComposition shape) {
             _shapeList.Add(shape);
@@ -37,6 +39,10 @@ namespace Bif3.Swe1.Oop.Polymorphism.OptimizedSolution {
             foreach (IShapeComposition shape in _shapeList) {
                 shape.PrintShapeType();
             }
+        }
+
+        public void Clear() {
+            _shapeList.Clear();
         }
     }
 }

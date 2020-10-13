@@ -1,5 +1,5 @@
 ﻿namespace Bif3.Swe1.Oop.Polymorphism.OptimizedSolution {
-    interface IShape {
+    public interface IShape {
         void PrintShapeType();
     }
 }
