@@ -7,10 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bif3.Swe1.Oop", "Bif3.Swe1.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bif3.Swe1.Testing", "Bif3.Swe1.UnitTest\Bif3.Swe1.Testing.csproj", "{9FB03359-BB22-4EFA-BEC0-7B93EBEA80C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bif3.Swe1.ServerSocket", "Bif3.Swe1.ServerSocket\Bif3.Swe1.ServerSocket.csproj", "{E197CD2B-2FB8-4970-A5D9-9938E2E6327E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bif3.Swe1.ClientSocket", "Bif3.Swe1.ClientSocket\Bif3.Swe1.ClientSocket.csproj", "{E719B460-B110-40FD-9AA0-99D4EB79A9A8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,14 +21,6 @@ Global
 		{9FB03359-BB22-4EFA-BEC0-7B93EBEA80C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FB03359-BB22-4EFA-BEC0-7B93EBEA80C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FB03359-BB22-4EFA-BEC0-7B93EBEA80C7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E197CD2B-2FB8-4970-A5D9-9938E2E6327E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E197CD2B-2FB8-4970-A5D9-9938E2E6327E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E197CD2B-2FB8-4970-A5D9-9938E2E6327E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E197CD2B-2FB8-4970-A5D9-9938E2E6327E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E719B460-B110-40FD-9AA0-99D4EB79A9A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E719B460-B110-40FD-9AA0-99D4EB79A9A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E719B460-B110-40FD-9AA0-99D4EB79A9A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E719B460-B110-40FD-9AA0-99D4EB79A9A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

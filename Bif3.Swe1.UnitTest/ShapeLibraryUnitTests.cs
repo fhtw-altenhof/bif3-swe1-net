@@ -10,8 +10,16 @@ namespace Bif3.Swe1.UnitTest {
         }
 
         [Test]
-        public void Test1() {
-            Assert.Pass();
+        public void TestLineLengthCalculation() {
+            // allocate
+            Line line = new Line(0, 1, 1, 1);
+
+            // act 
+            double actualLinePerimeter = line.GetPerimeter();
+            double expectedLinePerimeter = 1;
+
+            // assert
+            Assert.AreEqual(expectedLinePerimeter, actualLinePerimeter);
         }
 
         [TearDown]
