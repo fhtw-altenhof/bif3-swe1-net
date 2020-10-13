@@ -2,6 +2,7 @@ using Bif3.Swe1.Oop.Polymorphism.OptimizedSolution;
 using NUnit.Framework;
 
 namespace Bif3.Swe1.UnitTest {
+    [TestFixture]
     public class ShapeLibraryIntegrationTests {
         private const int expectedZeroCount = 0;
         private const int expectedOneCount = 1;
@@ -10,7 +11,7 @@ namespace Bif3.Swe1.UnitTest {
 
         private CompoundShape _compoundShape;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void Setup() {
             _compoundShape = new CompoundShape(7, 7);
         }
@@ -37,24 +38,25 @@ namespace Bif3.Swe1.UnitTest {
             Assert.AreEqual(expectedAreaSum, actualAreaSum);
         }
 
+        [Test]
         public void TestCompoundShapeContent() {
             Line line = new Line(0, 1, 1, 1);
             Circle circle = new Circle(5, 5, 3);
 
             // act
-            double actualZeroCount = _compoundShape.Count;
+            int actualZeroCount = _compoundShape.Count;
 
             _compoundShape.Add(line);
-            double actualOneCount = _compoundShape.Count;
+            int actualOneCount = _compoundShape.Count;
 
             _compoundShape.Add(circle);
-            double actualTwoCount = _compoundShape.Count;
+            int actualTwoCount = _compoundShape.Count;
 
             _compoundShape.Add(new Line(3, 4, 5, 6));
-            double actualThreeCount = _compoundShape.Count;
+            int actualThreeCount = _compoundShape.Count;
 
             _compoundShape.Clear();
-            double actualClearCount = _compoundShape.Count;
+            int actualClearCount = _compoundShape.Count;
 
             // assert (not an optimal solution for testing, but shows a way to test with multiple asserts)
             Assert.AreEqual(expectedZeroCount, actualZeroCount);

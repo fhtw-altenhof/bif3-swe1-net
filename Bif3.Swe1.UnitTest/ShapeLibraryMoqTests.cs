@@ -8,7 +8,7 @@ namespace Bif3.Swe1.UnitTest {
 
         private CompoundShape _compoundShape;
 
-        [SetUp]
+        [OneTimeSetUp]
         public void Setup() {
             _compoundShape = new CompoundShape(7, 7);
         }
@@ -26,8 +26,8 @@ namespace Bif3.Swe1.UnitTest {
             double tempPerimeter = mockShape.Object.GetPerimeter();
 
             // assert
-            mockShape.Verify(foo => foo.GetArea());
-            mockShape.Verify(foo => foo.GetPerimeter());
+            mockShape.Verify(shape => shape.GetArea());
+            mockShape.Verify(shape => shape.GetPerimeter());
         }
 
         [Test]

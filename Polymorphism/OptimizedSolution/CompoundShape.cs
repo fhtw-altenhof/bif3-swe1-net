@@ -8,7 +8,7 @@ namespace Bif3.Swe1.Oop.Polymorphism.OptimizedSolution {
 
         public CompoundShape(int x, int y) : base(x, y) {}
 
-        public double Count => _shapeList.Count;
+        public int Count => _shapeList.Count;
 
         public void Add(IShapeComposition shape) {
             _shapeList.Add(shape);
