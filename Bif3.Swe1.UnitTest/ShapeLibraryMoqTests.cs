@@ -6,6 +6,9 @@ namespace Bif3.Swe1.UnitTest {
     [TestFixture]
     public class ShapeLibraryMoqTests {
 
+        private const double mockValue1 = 5;
+        private const double mockValue2 = 3;
+
         private CompoundShape _compoundShape;
 
         [OneTimeSetUp]
@@ -15,11 +18,11 @@ namespace Bif3.Swe1.UnitTest {
 
         [Test]
         public void TestCircleShapeMock() {
-            // allocate
+            // arrange
             var mockShape = new Mock<IShapeComposition>();
 
-            mockShape.Setup(shape => shape.GetArea()).Returns(5);
-            mockShape.Setup(shape => shape.GetPerimeter()).Returns(3);
+            mockShape.Setup(shape => shape.GetArea()).Returns(mockValue1);
+            mockShape.Setup(shape => shape.GetPerimeter()).Returns(mockValue2);
 
             // act
             double tempArea = mockShape.Object.GetArea();
@@ -33,18 +36,19 @@ namespace Bif3.Swe1.UnitTest {
         [Test]
         public void TestCompoundShapeMock() {
             // allocate
+            double expectedAreaSum = 8;
+
             var mockShape1 = new Mock<IShapeComposition>();
             var mockShape2 = new Mock<IShapeComposition>();
 
-            mockShape1.Setup(shape => shape.GetArea()).Returns(5);
-            mockShape2.Setup(shape => shape.GetArea()).Returns(7);
+            mockShape1.Setup(shape => shape.GetArea()).Returns(mockValue1);
+            mockShape2.Setup(shape => shape.GetArea()).Returns(mockValue2);
 
             // act
             _compoundShape.Add(mockShape1.Object);
             _compoundShape.Add(mockShape2.Object);
 
             double actualAreaSum = _compoundShape.GetArea();
-            double expectedAreaSum = 12;
 
             // assert
             Assert.AreEqual(expectedAreaSum, actualAreaSum);
