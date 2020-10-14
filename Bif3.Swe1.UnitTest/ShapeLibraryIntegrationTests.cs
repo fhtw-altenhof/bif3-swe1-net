@@ -10,28 +10,30 @@ namespace Bif3.Swe1.UnitTest {
         private const int expectedThreeCount = 3;
 
         private CompoundShape _compoundShape;
+        private Line _line;
+        private Circle _circle;
 
         [OneTimeSetUp]
         public void Setup() {
             _compoundShape = new CompoundShape(7, 7);
+            _line = new Line(0, 1, 1, 1);
+            _circle = new Circle(5, 5, 3);
         }
 
         [Test]
         public void TestCompoundShapeMath() {
-            Line line = new Line(0, 1, 1, 1);
-            Circle circle = new Circle(5, 5, 3);
-            _compoundShape.Add(line);
-            _compoundShape.Add(circle);
-            _compoundShape.Add(new Line(3, 4, 5, 6));
+            // arrange
+            // manually calc sum of perimeters - line + circle + line
+            double expectedPerimeterSum = 1 + 18.8495559215387594;
+            // manually calc sum of areas - line + circle + line
+            double expectedAreaSum = 0 + 28.274333882308139146;
+
+            _compoundShape.Add(_line);
+            _compoundShape.Add(_circle);
 
             // act
             double actualPerimeterSum = _compoundShape.GetPerimeter();
-            // manually calc sum of perimeters - line + circle + line
-            double expectedPerimeterSum = 1 + 18.8495559215387594 + 2.828427124746190097;
-
             double actualAreaSum = _compoundShape.GetArea();
-            // manually calc sum of areas - line + circle + line
-            double expectedAreaSum = 0 + 28.274333882308139146 + 0;
 
             // assert
             Assert.AreEqual(expectedPerimeterSum, actualPerimeterSum);
@@ -40,20 +42,14 @@ namespace Bif3.Swe1.UnitTest {
 
         [Test]
         public void TestCompoundShapeContent() {
-            Line line = new Line(0, 1, 1, 1);
-            Circle circle = new Circle(5, 5, 3);
+            // arrange
+            Line line = new Line(3, 4, 5, 6);
 
             // act
-            int actualZeroCount = _compoundShape.Count;
-
-            _compoundShape.Add(line);
-            int actualOneCount = _compoundShape.Count;
-
-            _compoundShape.Add(circle);
-            int actualTwoCount = _compoundShape.Count;
-
-            _compoundShape.Add(new Line(3, 4, 5, 6));
-            int actualThreeCount = _compoundShape.Count;
+            int actualZeroCount = _compoundShape.Count;         
+            int actualOneCount = AddCompoundShapeAndGetCount(_line);
+            int actualTwoCount = AddCompoundShapeAndGetCount(_circle);
+            int actualThreeCount = AddCompoundShapeAndGetCount(line);
 
             _compoundShape.Clear();
             int actualClearCount = _compoundShape.Count;
@@ -64,6 +60,11 @@ namespace Bif3.Swe1.UnitTest {
             Assert.AreEqual(expectedTwoCount, actualTwoCount);
             Assert.AreEqual(expectedThreeCount, actualThreeCount);
             Assert.AreEqual(expectedZeroCount, actualClearCount);
+        }
+
+        private int AddCompoundShapeAndGetCount(IShapeComposition shape) {
+            _compoundShape.Add(shape);
+            return _compoundShape.Count;
         }
 
         [TearDown]
