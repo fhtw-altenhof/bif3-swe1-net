@@ -8,17 +8,16 @@ namespace Bif3.Swe1.UnitTest {
         private const int expectedOneCount = 1;
 
         [SetUp]
-        public void Setup() {
-        }
+        public void Setup() { }
 
         [Test]
         public void TestLineLengthCalculation() {
-            // allocate
+            // arrange
             Line line = new Line(0, 1, 1, 1);
+            double expectedLinePerimeter = 1;
 
             // act 
             double actualLinePerimeter = line.GetPerimeter();
-            double expectedLinePerimeter = 1;
             
             // assert
             Assert.AreEqual(expectedLinePerimeter, actualLinePerimeter);
@@ -26,12 +25,12 @@ namespace Bif3.Swe1.UnitTest {
 
         [Test]
         public void TestCircleAreaCalculation() {
-            // allocate
+            // arrange
             Circle circle = new Circle(5, 5, 3);
+            double expectedCircleArea = 28.274333882308139146;
 
             // act 
             double actualCircleArea = circle.GetArea();
-            double expectedCircleArea = 28.274333882308139146;
 
             // assert
             Assert.AreEqual(expectedCircleArea, actualCircleArea);
@@ -39,7 +38,7 @@ namespace Bif3.Swe1.UnitTest {
 
         [Test]
         public void TestCompoundShapeAdd() {
-            // allocate
+            // arrange
             CompoundShape compoundShape = new CompoundShape(7, 7);
 
             // act 
@@ -51,7 +50,7 @@ namespace Bif3.Swe1.UnitTest {
 
         [Test]
         public void TestCompoundShapeClear() {
-            // allocate
+            // arrange
             CompoundShape compoundShape = new CompoundShape(7, 7);
 
             // act 
@@ -63,7 +62,6 @@ namespace Bif3.Swe1.UnitTest {
         }
 
         [TearDown]
-        public void TearDown() {
-        }
+        public void TearDown() { }
     }
 }
